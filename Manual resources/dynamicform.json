@@ -1,8 +1,8 @@
 [
     {
-        "key":  "searchfield",
+        "key":  "searchGroup",
         "templateOptions":  {
-                                "label":  "Search",
+                                "label":  "Search Distributiongroup",
                                 "required":  true
                             },
         "type":  "input",
@@ -12,9 +12,9 @@
         "requiresDataSource":  false
     },
     {
-        "key":  "gridGroups",
+        "key":  "gridGroup",
         "templateOptions":  {
-                                "label":  "Select group",
+                                "label":  "Select Distributiongroup",
                                 "required":  true,
                                 "grid":  {
                                              "columns":  [
@@ -23,16 +23,16 @@
                                                                  "field":  "DisplayName"
                                                              },
                                                              {
-                                                                 "headerName":  "User Principal Name",
-                                                                 "field":  "UserPrincipalName"
+                                                                 "headerName":  "Primary Smtp Address",
+                                                                 "field":  "PrimarySmtpAddress"
                                                              },
                                                              {
-                                                                 "headerName":  "DN",
-                                                                 "field":  "DN"
+                                                                 "headerName":  "Distinguished Name",
+                                                                 "field":  "DistinguishedName"
                                                              }
                                                          ],
                                              "height":  300,
-                                             "rowSelection":  "multiple"
+                                             "rowSelection":  "single"
                                          },
                                 "dataSourceConfig":  {
                                                          "dataSourceGuid":  "$dataSourceGuid_0",
@@ -41,16 +41,17 @@
                                                                                               {
                                                                                                   "propertyName":  "searchValue",
                                                                                                   "otherFieldValue":  {
-                                                                                                                          "otherFieldKey":  "searchfield"
+                                                                                                                          "otherFieldKey":  "searchGroup"
                                                                                                                       }
                                                                                               }
                                                                                           ]
                                                                    }
                                                      },
                                 "useFilter":  true,
-                                "useDefault":  false
+                                "useDefault":  false,
+                                "allowCsvDownload":  true
                             },
-        "type":  "multiselectgrid",
+        "type":  "grid",
         "summaryVisibility":  "Show",
         "requiresTemplateOptions":  true,
         "requiresKey":  true,
